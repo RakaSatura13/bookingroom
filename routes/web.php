@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\controllers\Auth\LoginController;
 use App\Http\controllers\DashboardController;
+use App\Http\controllers\AccomodationController;
+use App\Http\controllers\BookingController;
 use App\Http\controllers\Admin\AdminController;
 use App\Http\controllers\Admin\HotelController;
 /*
@@ -33,10 +35,12 @@ Route::post('/admin/hotel/edit',[HotelController::class,'update'])->name('update
 
 Route::get('/admin/hotel/delete/{id}',[HotelController::class,'delete'])->name('deletehotel');
 
+Route::get('/admin/booking',[BookingController::class,'list'])->name('bookinglist');
+
 Route::get('/home', function () {
     return view('dashboard');
 })->name('home');
 
-Route::get('/accomodation',function(){
-    return view('accomodation');
-})->name('accomodation');
+Route::get('/accomodation',[AccomodationController::class,'index'])->name('accomodation');
+Route::get('/booking/{id}/{nama}',[BookingController::class,'index'])->name('booking');
+Route::post('/booking',[BookingController::class,'store'])->name('storebooking');

@@ -39,9 +39,9 @@
                                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                                 {{ __('List Hotel') }}
                             </a>
-                            <a class="nav-link" href="adminreport">
+                            <a class="nav-link" href="{{ route('bookinglist') }}">
                                 <div class="nav-link-icon"><i data-feather="bar-chart-2"></i></div>
-                                {{ __('Attendance Report') }}
+                                {{ __('List Booking') }}
                             </a>
                             <div class="sidenav-menu-heading">{{ __('Master Data') }}</div>
                             <a class="nav-link" href="workinghours">

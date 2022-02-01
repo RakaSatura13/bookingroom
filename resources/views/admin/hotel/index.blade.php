@@ -30,11 +30,13 @@
         </div>
     </header>
     <div class="container mt-n10">
-        <div class="card mb-4">
+        <div class="card mb-2">
             <div class="card-header">
                 {{ __('Employee List') }}
+                
             </div>
             <div class="card-body">
+                <a class="btn btn-success mb-2" href="{{ route('addhotel') }}">Tambah Data</a>
                 <div class="datatable">
                     <table class="table table-bordered table-hover" id="employee_table" width="100%" cellspacing="0">
                         <thead>
