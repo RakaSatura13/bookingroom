@@ -21,7 +21,11 @@ use App\Http\controllers\Admin\HotelController;
 
 Route::get('/google-login', [GoogleController::class,'redirectToProvider'])->name('login.google');
 Route::get('/auth/google/callback', [GoogleController::class,'handleProviderCallback']);
-Route::get('/login',[LoginController::class,'login'])->name('login');
+
+Route::get('/login', function () {
+    return redirect('/google-login');
+})->name('login');
+
 
 Route::get('/',[DashboardController::class,'index']);
 
@@ -41,6 +45,15 @@ Route::get('/home', function () {
     return view('dashboard');
 })->name('home');
 
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
+
+
 Route::get('/accomodation',[AccomodationController::class,'index'])->name('accomodation');
 Route::get('/booking/{id}/{nama}',[BookingController::class,'index'])->name('booking');
 Route::post('/booking',[BookingController::class,'store'])->name('storebooking');
+
+Route::get('/admin/booking/checkin/{id}', [BookingController::class,'checkin'])->name('checkin');
+Route::get('/admin/booking/checkout/{id}', [BookingController::class,'checkout'])->name('checkout');

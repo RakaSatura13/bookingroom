@@ -20,6 +20,7 @@ class CreateBookingsTable extends Migration
             $table->datetime('departure_date');
             $table->Integer('tamu');
             $table->string('nama');
+            $table->Integer('status');
             $table->timestamps();
         });
     }

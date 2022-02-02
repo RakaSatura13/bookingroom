@@ -38,7 +38,28 @@ class BookingController extends Controller
 
     public function list()
     {
-        $booking = Booking::select('hotels.nama','bookings.arrival_date','bookings.departure_date','bookings.tamu','bookings.nama as nama_tamu')->join('hotels','hotels.id','=','bookings.hotel_id')->get();
+        $booking = Booking::select('hotels.nama','bookings.id','bookings.status','bookings.arrival_date','bookings.departure_date','bookings.tamu','bookings.nama as nama_tamu')
+        ->join('hotels','hotels.id','=','bookings.hotel_id')->get();
         return view('admin.booking.index',compact('booking'));
+    }
+
+    public function checkin($id)
+    {
+        $booking = Booking::find($id);
+        $booking->status = 1;
+        $booking->update();
+
+        return redirect()->back()
+                        ->with('success','Berhasil Checkin');
+    }
+
+    public function checkout($id)
+    {
+        $booking = Booking::find($id);
+        $booking->status = 2;
+        $booking->update();
+
+        return redirect()->back()
+                        ->with('success','Berhasil Checkin');
     }
 }

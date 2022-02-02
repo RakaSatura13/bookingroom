@@ -24,7 +24,7 @@
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow navbar-light bg-white" id="sidenavAccordion">
-            <img class="img-logo order-1 order-sm-0 order-md-0" src="{{ asset('assets') }}/assets/img/1ga-logo.png"/>
+            <img class="img-logo order-1 order-sm-0 order-md-0" src="{{ asset('assets') }}"/>
             <button class="btn btn-icon btn-transparent-dark ml-3 ml-lg-0 mr-lg-2" id="sidebarToggle" href="#">
                 <i data-feather="menu"></i>
             </button>
@@ -43,7 +43,7 @@
                                 <div class="nav-link-icon"><i data-feather="bar-chart-2"></i></div>
                                 {{ __('List Booking') }}
                             </a>
-                            <div class="sidenav-menu-heading">{{ __('Master Data') }}</div>
+                            {{-- <div class="sidenav-menu-heading">{{ __('Master Data') }}</div>
                             <a class="nav-link" href="workinghours">
                                 <div class="nav-link-icon"><i data-feather="clock"></i></div>
                                 {{ __('Working Hours') }}
@@ -56,7 +56,7 @@
                             <a class="nav-link" href="adminprofile">
                                 <div class="nav-link-icon"><i data-feather="user"></i></div>
                                 {{ __('Profile') }}
-                            </a>
+                            </a> --}}
                             <div class="sidenav-menu-heading">{{ __('Logout') }}</div>
                             <a class="nav-link" href="onclick="confirm_modal() data-toggle="modal" data-target="#modalLogout">
                                 <div class="nav-link-icon"><i data-feather="log-out"></i></div>

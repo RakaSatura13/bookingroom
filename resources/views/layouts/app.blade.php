@@ -34,18 +34,8 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">Home</a></li> 
-                            <li class="nav-item"><a class="nav-link" href="{{asset('')}}about.html">About us</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('accomodation') }}">Accomodation</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{asset('')}}gallery.html">Gallery</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="{{asset('')}}#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="{{asset('')}}blog.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{asset('')}}blog-single.html">Blog Details</a></li>
-                                </ul>
-                            </li> 
-                            <li class="nav-item"><a class="nav-link" href="{{asset('')}}elements.html">Elemests</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{asset('')}}contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('gallery') }}">Gallery</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </div> 

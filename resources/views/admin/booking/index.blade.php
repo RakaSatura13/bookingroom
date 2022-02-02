@@ -46,6 +46,7 @@
                                 <th>{{ __('Departure Date') }}</th>
                                 <th>{{ __('Tamu') }}</th>
                                 <th>{{ __('Nama') }}</th>
+                                <th>{{ __('Status') }}</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
                         </thead>
@@ -61,7 +62,20 @@
                                     <td>{{ $h->departure_date }}</td>
                                     <td>{{ $h->tamu }}</td>
                                     <td>{{ $h->nama_tamu }}</td>
-                                    <td></td>
+                                    <td>@if($h->status==1)
+                                        <span class="badge badge-success">Check-in</span>
+                                        @elseif($h->status==2)
+                                        <span class="badge badge-primary">Check-out</span>
+                                        @else 
+                                        <span class="badge badge-info">Belum</span>
+                                        @endif</td>
+                                    <td>@if($h->status==1)
+                                        <a href="{{ route('checkout',$h->id) }}" onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger btn-sm">Check-out</a>
+                                        @elseif($h->status==2)
+                                        {{-- <a href="" class="btn btn-danger">Check-out</a> --}}
+                                        @else 
+                                        <a href="{{ route('checkin',$h->id) }}" class="btn btn-success btn-sm">Check-in</a>
+                                        @endif</td>
                                 </tr>
                             @endforeach
                         </tbody>
